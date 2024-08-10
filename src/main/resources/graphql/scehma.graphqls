@@ -1,0 +1,24 @@
+type Contact{
+    id: ID!
+    personName: String
+    phoneNumber: String
+    ContactType: ContactType
+}
+input ContactInput {
+    personName: String
+    phoneNumber: String
+    contactType: ContactType
+}
+
+enum ContactType {
+    HOME
+    WORK
+}
+
+type Query {
+    contactList : [Contact]
+}
+
+type Mutation {
+    addContact(contact: ContactInput): Contact
+}
